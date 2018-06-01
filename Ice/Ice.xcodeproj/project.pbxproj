@@ -64,7 +64,7 @@
 		8478888720BF86F1004B3343 /* IceCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IceCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8478888920BF86F1004B3343 /* IceCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IceCache.h; sourceTree = "<group>"; };
 		8478888A20BF86F1004B3343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8478889420BF8A8E004B3343 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		847D118620C01DEE0051C631 /* LRU-LinkedList.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "LRU-LinkedList.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 		8478884920BF869A004B3343 = {
 			isa = PBXGroup;
 			children = (
-				8478889420BF8A8E004B3343 /* MyPlayground.playground */,
+				847D118620C01DEE0051C631 /* LRU-LinkedList.playground */,
 				8478886320BF86C7004B3343 /* IceCacheSample */,
 				8478887820BF86C9004B3343 /* IceCacheSampleTests */,
 				8478888820BF86F1004B3343 /* IceCache */,
