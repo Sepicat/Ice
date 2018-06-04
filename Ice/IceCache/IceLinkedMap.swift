@@ -1,5 +1,5 @@
 //
-//  LRUCache.swift
+//  IceLinkedMap.swift
 //  IceCache
 //
 //  Created by Harry Twan on 2018/6/2.
@@ -8,21 +8,23 @@
 
 import UIKit
 
-public final class LinkedList<ValueType> {
+public final class LinkedList<KeyType: Hashable, ValueType> {
     
     /// Node Basic DS Decalaration
-    public class LinkedListNode<ValueType> {
+    public class LinkedListNode<KeyType: Hashable, ValueType> {
         var value: ValueType
+        var key: KeyType
         var next: LinkedListNode?
         weak var previous: LinkedListNode?
         
-        public init(value: ValueType) {
+        public init(key: KeyType, value: ValueType) {
+            self.key = key
             self.value = value
         }
     }
     
     /// Typealiasing the node class
-    public typealias Node = LinkedListNode<ValueType>
+    public typealias Node = LinkedListNode<KeyType, ValueType>
     
     /// The count of the Linked List Node
     private(set) var count: Int
@@ -90,8 +92,8 @@ public extension LinkedList {
     /// Append a value to the end of the list auto transform a Node object
     ///
     /// - Parameter value: The data value to be appended
-    public func append(_ value: ValueType) {
-        let newNode = Node(value: value)
+    public func append(key: KeyType, value: ValueType) {
+        let newNode = Node(key: key, value: value)
         append(newNode)
     }
     
@@ -144,13 +146,13 @@ public extension LinkedList {
     }
 }
 
-public class LRUCache<KeyType: Hashable, ValueType> {
+public class LinkedMap<KeyType: Hashable, ValueType> {
     
-    typealias Node = LinkedList<ValueType>.LinkedListNode<ValueType>
+    typealias Node = LinkedList<KeyType, ValueType>.LinkedListNode<KeyType, ValueType>
     
     private(set) var capacity: Int
     
-    private var priority: LinkedList<ValueType> = LinkedList<ValueType>()
+    private var priority: LinkedList<KeyType, ValueType> = LinkedList<KeyType, ValueType>()
     
     private var hashMap: [KeyType: Node] = [:]
     
@@ -160,15 +162,15 @@ public class LRUCache<KeyType: Hashable, ValueType> {
     
     /// Test Property
     public var description: String {
-        var result = ""
+        var result = "Count: \(priority.count)  "
         guard let head = priority.head else {
             return "Empty"
         }
         
-        result += "[\(head.value)]"
+        result += "[\(head.key): \(head.value)]"
         var node = head
         while let iterate = node.next {
-            result += " -> [\(iterate.value)]"
+            result += " -> [\(iterate.key): \(iterate.value)]"
             node = iterate
         }
         return result
@@ -176,7 +178,7 @@ public class LRUCache<KeyType: Hashable, ValueType> {
 }
 
 // MARK: - API
-public extension LRUCache {
+public extension LinkedMap {
     public func get(_ key: KeyType) -> ValueType? {
         guard let node = hashMap[key] else {
             return nil
@@ -191,7 +193,7 @@ public extension LRUCache {
             node.value = value
             return
         }
-        let newNode = Node(value: value)
+        let newNode = Node(key: key, value: value)
         priority.insert(newNode, at: 0)
         hashMap[key] = newNode
         

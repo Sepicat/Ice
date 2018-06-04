@@ -16,7 +16,8 @@
 		8478888B20BF86F1004B3343 /* IceCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 8478888920BF86F1004B3343 /* IceCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8478888E20BF86F1004B3343 /* IceCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8478888720BF86F1004B3343 /* IceCache.framework */; };
 		8478888F20BF86F1004B3343 /* IceCache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8478888720BF86F1004B3343 /* IceCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D5A0BB0C20C21063002B4737 /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BB0B20C21063002B4737 /* LRUCache.swift */; };
+		D5A0BB0C20C21063002B4737 /* IceLinkedMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BB0B20C21063002B4737 /* IceLinkedMap.swift */; };
+		D5A0BB0E20C2787A002B4737 /* IceMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A0BB0D20C2787A002B4737 /* IceMemoryCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +67,8 @@
 		8478888920BF86F1004B3343 /* IceCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IceCache.h; sourceTree = "<group>"; };
 		8478888A20BF86F1004B3343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847D118620C01DEE0051C631 /* LRU-LinkedList.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "LRU-LinkedList.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		D5A0BB0B20C21063002B4737 /* LRUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
+		D5A0BB0B20C21063002B4737 /* IceLinkedMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceLinkedMap.swift; sourceTree = "<group>"; };
+		D5A0BB0D20C2787A002B4737 /* IceMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceMemoryCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +153,8 @@
 			children = (
 				8478888920BF86F1004B3343 /* IceCache.h */,
 				8478888A20BF86F1004B3343 /* Info.plist */,
-				D5A0BB0B20C21063002B4737 /* LRUCache.swift */,
+				D5A0BB0B20C21063002B4737 /* IceLinkedMap.swift */,
+				D5A0BB0D20C2787A002B4737 /* IceMemoryCache.swift */,
 			);
 			path = IceCache;
 			sourceTree = "<group>";
@@ -360,7 +363,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5A0BB0C20C21063002B4737 /* LRUCache.swift in Sources */,
+				D5A0BB0C20C21063002B4737 /* IceLinkedMap.swift in Sources */,
+				D5A0BB0E20C2787A002B4737 /* IceMemoryCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

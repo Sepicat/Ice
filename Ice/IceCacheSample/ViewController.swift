@@ -11,7 +11,7 @@ import IceCache
 
 class ViewController: UIViewController {
     
-    let cache: LRUCache<String, Int> = LRUCache<String, Int>(5)
+    let cache: LinkedMap<String, Int> = LinkedMap<String, Int>(5)
 
     override func viewDidLoad() {
         super.viewDidLoad()
